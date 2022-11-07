@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { AuthContextProvider } from './Components/context/AuthContext';
+import { ChatContextProvider } from './Components/context/ChatContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <AuthContextProvider>
+    <link href="//db.onlinewebfonts.com/c/229a57bbeef591e04a1fdfe347c90864?family=Centra+No2" rel="stylesheet" type="text/css"/>
+    <ChatContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ChatContextProvider>
+  </AuthContextProvider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

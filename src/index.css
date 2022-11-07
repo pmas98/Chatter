@@ -1,13 +1,492 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(//db.onlinewebfonts.com/c/229a57bbeef591e04a1fdfe347c90864?family=Centra+No2);
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/229a57bbeef591e04a1fdfe347c90864.eot"); src: url("//db.onlinewebfonts.com/t/229a57bbeef591e04a1fdfe347c90864.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/229a57bbeef591e04a1fdfe347c90864.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/229a57bbeef591e04a1fdfe347c90864.woff") format("woff"), url("//db.onlinewebfonts.com/t/229a57bbeef591e04a1fdfe347c90864.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/229a57bbeef591e04a1fdfe347c90864.svg#Centra No2") format("svg"); }
+@font-face {font-family: "Centra No2"; src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot"); src: url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1d8aa3902ed39929de0912f0ff2bb89f.svg#Centra No2") format("svg"); }
+*{
+  font-family: "Centra No2";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media(max-width:480px){
+  .home .container .sidebar .Navbar .logo{
+  display: none;
+  }
+}
+
+@media(max-width:768px){
+  .home .container .sidebar .Navbar .logo{
+    display: none;
+    }
+  .home .container{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+  }
+
+
+  .home .container .sidebar{
+
+    position: relative;
+    width: 10%;
+  }
+  .home .container .sidebar .Navbar .user button{
+    position: absolute;
+    bottom: 10px;
+    
+  }
+  .home .container .sidebar .Chats .userChatInfo span{
+    font-size: 16px;
+    font-weight: 500;
+    display: none;
+  }
+  
+  .home .container .sidebar .Chats .userChatInfo p{
+    display: none;
+  }
+  .home .container .sidebar .Search .userChat p{
+    display: none;
+  }
+  .home .container .sidebar .Search .userChat span{
+    display: none;
+  }
+  
+}
+
+@media(max-width:1200){
+  
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+/* Login and Register CSS */
+
+.formContainer{
+  background: rgb(252,123,84);
+  background: linear-gradient(45deg, rgba(252,123,84,.8) 0%, rgba(144,43,245,.7) 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formWrapper{
+  background-color: white;
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  align-items: center;
+  border-radius: 10px;
+}
+.formWrapper .logo{
+  background: -webkit-linear-gradient(#fc7b54, #902bf5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.title{
+  color: #5d5b8d;
+  font-size: 12px;
+}
+
+.formWrapper form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.formWrapper input{
+  padding: 15px;
+  border: none;
+  width: 250px;
+  border-bottom: 2px solid #a7bcff;
+}
+.formWrapper input::placeholder{
+  color: rgb(175,175,175);
+}
+.formWrapper button{
+  background-color: #7b96ec;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  position: relative;
+	transition: 0.3s ease-in-out;
+}
+
+.formWrapper button {
+  z-index: 1;
+}
+.formWrapper button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background: rgb(252,123,84);
+  background: linear-gradient(45deg, rgba(252,123,84,.8) 0%, rgba(144,43,245,.7) 100%);
+
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.formWrapper button:hover {
+  color: white;
+}
+.formWrapper button:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.formWrapper p{
+  color: #5d5b8d;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.formWrapper label{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8da4f1;
+  font-size: 12px;
+  cursor:pointer
+}
+
+.formWrapper img{
+  width: 35px;
+}
+
+/* Home CSS */
+
+.home{
+  background: rgb(252,123,84);
+  background: linear-gradient(45deg, rgba(252,123,84,.8) 0%, rgba(144,43,245,.7) 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .container{
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 65%;
+  height: 80%;
+  display: flex;
+  overflow: hidden;
+}
+
+.home .container .sidebar{
+  flex:1;
+/* background-color: #553c61; */
+  background-color: ;
+  opacity: 1;
+  border-right: 2px solid white;
+}
+
+.home .container .sidebar .Navbar{
+  display: flex;
+  align-items: center;
+  background-color: ;
+  opacity: 1;
+  height: 50px;
+  padding: 10px;
+  justify-content: space-between;
+  color: #ddddf7;
+  border-bottom: 2px solid white;
+  
+}
+
+.home .container .sidebar .Navbar .logo{
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+}
+
+.home .container .sidebar .Navbar .user{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.home .container .sidebar .Navbar .user img{
+  background-color: #ddddf7;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  opacity: 0.85;
+  object-fit: cover;
+}
+
+.home .container .sidebar .Navbar .user button{
+  color:  #8da4f1;
+  background-color: ;
+  font-size: 12px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10%;
+}
+
+.home .container .Chat{
+  flex:2;
+}
+
+.home .container .Chat .chatInfo{
+  height: 50px;
+  background-color: ;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: lightgray;
+}
+
+.home .container .Chat .chatIcons{
+  display: flex;
+  gap: 10px
+}
+
+.home .container .Chat .messages{
+  /* background-color: #ddddf7; */
+  background-color: ;
+  padding: 10px;
+  height: calc(100% - 160px);
+  overflow: hidden;
+}
+
+.home .container .Chat .messages .message{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.home .container .Chat .messages .message .messageInfo{
+  display: flex;
+  flex-direction: column;
+  color: gray;
+}
+
+.home .container .Chat .messages .message .messageInfo span{
+  padding-top: 10px;
+}
+
+.home .container .Chat .messages .message .messageInfo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home .container .Chat .messages .message .messageContent{
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home .container .Chat .messages .message .messageContent p{
+  background-color: #b3b3e8;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 0 10px 10px 10px;
+}
+
+
+.home .container .Chat .messages .message .messageContent img{
+  width: 50%;
+  object-fit: cover;
+}
+
+.home .container .Chat .chatIcons img{
+  width: 30px;
+  height: 30px;
+}
+
+.home .container .Chat .messages .owner{
+  flex-direction: row-reverse;
+}
+
+.home .container .Chat .messages .owner .messageContent{
+  align-items: flex-end;
+}
+
+
+.home .container .Chat .messages .owner .messageContent p{
+  color: #8da4f1;
+  background-color: white;
+  border-radius: 10px 0 10px 10px;
+}
+
+.home .container .Chat .Input{
+  height: 50px;
+  /* background-color: white; */
+  border-top: 2px solid white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.home .container .Chat .Input input{
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #2f2d52;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.home .container .Chat .Input input::placeholder{
+  color: lightgray;
+}
+
+.home .container .Chat .Input .send{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home .container .Chat .Input .send img{
+  height: 24px;
+  cursor: pointer;
+}
+
+.home .container .Chat .Input .send button{
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  color: #8989c9;
+  background-color: white;
+}
+
+.home .container .Chat .chatInfo{
+font-size: 20px;
+border-bottom: 2px solid white;
+}
+
+
+.home .container .sidebar .Search {
+  border-bottom: 1px solid white;
+}
+
+.home .container .sidebar .Search .searchForm{
+  padding: 10px;
+}
+
+.home .container .sidebar .Search .searchForm input{
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.home .container .sidebar .Search .searchForm input::placeholder{
+  color: lightgray;
+  outline: none;
+}
+
+.home .container .sidebar .Search .userChat{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.home .container .sidebar .Search .userChat:hover{
+  background-color: #402d52;
+}
+
+.home .container .sidebar .Search .userChat img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home .container .sidebar .Chats .userChat{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+	background-color: transparent;
+	transition: 0.3s ease-in-out;
+}
+
+.home .container .sidebar .Chats .userChat:hover{
+  background-color: #402d52;
+}
+
+.home .container .sidebar .Chats .userChat{
+  z-index: 1;
+}
+ /* */
+.home .container .sidebar .Chats .userChat::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background: white;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.home .container .sidebar .Chats .userChat:hover {
+  color: #8989c9;
+  opacity: 1;
+}
+
+.home .container .sidebar .Chats .userChat:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+
+.round{
+  border-radius: 10%;
+  background-color: #8989c9;
+}
+
+.home .container .sidebar .Chats .userChat img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.home .container .sidebar .Chats .userChatInfo span{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.home .container .sidebar .Chats .userChatInfo p{
+  font-size: 14px;
+  color: lightgray
+}
+.big{
+  font-weight: 900;
 }
