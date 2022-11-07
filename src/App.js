@@ -6,7 +6,7 @@ import { Login } from './pages/Login';
 import { Home } from './pages/Home';
 
 import{
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   Navigate
@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/'>
           <Route index element={
@@ -41,7 +41,7 @@ function App() {
           
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
