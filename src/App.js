@@ -36,8 +36,8 @@ function App() {
             <Home />
           </ProtectedRoute>
           } />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           
         </Route>
       </Routes>
